@@ -1,0 +1,8 @@
+
+- hosts: localhost
+  vars: 
+    foo: bar
+
+  tasks:
+  - debug: msg="{{ lookup('remote_template', 'https://raw.githubusercontent.com/jsmartin/lightbulb/master/lessons/apache_centos/roles/apache/templates/index.html.j2') }}"
+  - debug: msg="{{ lookup('template', '/tmp/url') }}"
